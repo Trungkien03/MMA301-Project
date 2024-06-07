@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "WhaleHome",
+    "slug": "Whale Home",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-screen.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kane.dev.WhaleHome",
+      "splash": {
+        "image": "./assets/splash-screen.png",
+        "resizeMode": "cover",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/splash-screen.png",
+        "monochromeImage": "./assets/icon.png",
+        "backgroundImage": "./assets/splash-screen.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": ["android.permission.RECORD_AUDIO"],
+      "package": "com.kane.dev.WhaleHome"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ],
+    "extra": {
+      "API_KEY": "AIzaSyB9dnpk8QWWCZbU5XWd4SOK0WPLBMUU4iw",
+      "AUTH_DOMAIN": "whalehome-d59de.firebaseapp.com",
+      "PROJECT_ID": "whalehome-d59de",
+      "STORAGE_BUCKET": "whalehome-d59de.appspot.com",
+      "MESSAGING_SENDER_ID": "883569776924",
+      "APP_ID": "1:883569776924:web:08185c4a1fede2aa1f82d9",
+      "MEASUREMENT_ID": "G-Z87B4YLPWE",
+      "SECRET_KEY": "404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970",
+      "eas": {
+        "projectId": "1f657673-a8c0-4102-960c-da5f980dd654"
+      }
+    }
+  }
+}
