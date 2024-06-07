@@ -3,7 +3,7 @@ import TextComponent from '@components/ui/TextComponent';
 import { typoColor } from '@constants/appColors';
 import fontFam from '@constants/fontFamilies';
 import useRootContext from '@hooks/useRootContext';
-import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useGetUnpaidBill, useGetUpcomingBill } from '@services/queries/bill.queries';
 import globalStyle from '@styles/globalStyle';
@@ -12,7 +12,7 @@ import { BillingScreenProps, MainStackParamList } from '@type/navigation.types';
 import { addPostfixToNumber, getMonthNameByNum } from '@utils/helper';
 import { ArrowRight2, Calendar1, TickSquare, Trash } from 'iconsax-react-native';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Alert, Image, RefreshControl, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Image, RefreshControl, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Animated, {
   FadeInDown,
   FadeInLeft,
@@ -21,7 +21,6 @@ import Animated, {
   FadeOutLeft,
   FadeOutRight
 } from 'react-native-reanimated';
-import socketIO from 'socket.io-client';
 import NotFound from '../Components/NotFound/NotFound';
 
 type FilterType = 'isAllBill' | 'isNotAllBill';
@@ -59,25 +58,25 @@ const BillingScreen = ({ route }: BillingScreenProps) => {
       price: totalPrice
     };
   }, [listIdChecked]);
-  const io = socketIO('https://whale-socket.up.railway.app/');
-  console.log(paymentData.paymentId.split(','));
-  useFocusEffect(
-    React.useCallback(() => {
-      io.emit('check-status-payment-36', { data: paymentData.paymentId.split(',') });
+  // const io = socketIO('https://whale-socket.up.railway.app/');
 
-      io.on('check-status-payment-36', (data) => {
-        console.log(data);
-        if (data.data === true) {
-          Alert.alert('Thanh toan thanh cong');
-        }
-      });
+  // useFocusEffect(
+  //   React.useCallback(() => {
+  //     io.emit('check-status-payment-36', { data: paymentData.paymentId.split(',') });
 
-      return () => {
-        io.off('check-status-payment-36');
-        io.disconnect();
-      };
-    }, [paymentData]) // Đảm bảo cập nhật khi paymentData thay đổi
-  );
+  //     io.on('check-status-payment-36', (data) => {
+  //       console.log(data);
+  //       if (data.data === true) {
+  //         Alert.alert('Thanh toan thanh cong');
+  //       }
+  //     });
+
+  //     return () => {
+  //       io.off('check-status-payment-36');
+  //       io.disconnect();
+  //     };
+  //   }, [paymentData]) // Đảm bảo cập nhật khi paymentData thay đổi
+  // );
 
   useEffect(() => {
     if (isAllBill === 'isNotAllBill') {

@@ -11,7 +11,9 @@
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.kane.dev.WhaleHome",
@@ -28,7 +30,9 @@
         "backgroundImage": "./assets/splash-screen.png",
         "backgroundColor": "#ffffff"
       },
-      "permissions": ["android.permission.RECORD_AUDIO"],
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
       "package": "com.kane.dev.WhaleHome"
     },
     "web": {
@@ -40,7 +44,8 @@
         {
           "photosPermission": "The app accesses your photos to let you share them with your friends."
         }
-      ]
+      ],
+      "expo-font"
     ],
     "extra": {
       "API_KEY": "AIzaSyB9dnpk8QWWCZbU5XWd4SOK0WPLBMUU4iw",
