@@ -22,7 +22,7 @@ const AuthNavigator = () => {
       <Stack.Screen
         name='SignUpScreen'
         component={SignUpScreen}
-        options={{ header: () => <AppointmentScreenHeader title='' />, presentation: 'modal' }}
+        options={{ header: () => <AppointmentScreenHeader title='' />, presentation: 'containedTransparentModal' }}
       />
     </Stack.Navigator>
   );

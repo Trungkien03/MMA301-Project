@@ -8,24 +8,24 @@ import useSocketConnection from './hooks/useSocketConnection.ts'
 export default function App() {
   const io = useSocketConnection()
 
-  useEffect(() => {
-    if (io) {
-      io.on('connect', () => {
-        console.log('Socket Connected!')
-      })
+  // useEffect(() => {
+  //   if (io) {
+  //     io.on('connect', () => {
+  //       console.log('Socket Connected!')
+  //     })
 
-      io.on('payment-success-admin', (data) => {
-        notification.success({
-          message: `Payment successful`,
-          description: `${data.name} has successfully paid for the new period`
-        })
-      })
+  //     io.on('payment-success-admin', (data) => {
+  //       notification.success({
+  //         message: `Payment successful`,
+  //         description: `${data.name} has successfully paid for the new period`
+  //       })
+  //     })
 
-      return () => {
-        io.off('payment-success-admin')
-      }
-    }
-  }, [io])
+  //     return () => {
+  //       io.off('payment-success-admin')
+  //     }
+  //   }
+  // }, [io])
   return (
     <>
       <ConfigProvider

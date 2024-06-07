@@ -118,8 +118,10 @@ const SignUpScreen = ({ navigation }: SignUpScreenProps) => {
                   <View style={[styles.inputContainer, styles.bottomWithCustom]}>
                     <TextComponent styles={[styles.label]} fontSize={15} content='Password' />
                     <TextInput
+                      textContentType='password'
                       placeholderTextColor={typoColor.gray1}
                       value={value}
+                      secureTextEntry={true}
                       onChangeText={onChange}
                       style={[styles.inputField, errors.password && styles.errorField]}
                       placeholder='Required'
@@ -141,6 +143,7 @@ const SignUpScreen = ({ navigation }: SignUpScreenProps) => {
                     <TextInput
                       placeholderTextColor={typoColor.gray1}
                       value={value}
+                      secureTextEntry={true}
                       onChangeText={onChange}
                       style={[styles.inputField, errors.verify_password && styles.errorField]}
                       placeholder='Confirm password'

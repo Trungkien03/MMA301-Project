@@ -139,8 +139,8 @@ const ModalContract = (props: FormContractModalProps) => {
               name='description'
               render={({ field: { value, onChange } }) => (
                 <Input.TextArea
+                  color='gray'
                   status={errors.description && 'error'}
-                  placeholder='Input description'
                   value={value}
                   onChange={(value) => {
                     onChange(value)
@@ -149,6 +149,7 @@ const ModalContract = (props: FormContractModalProps) => {
               )}
             />
           </div>
+
           <div style={{ width: '100%' }}>
             <Typography.Title level={5}>Appointment</Typography.Title>
             <Controller
